@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELKIE Collaboration</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Background Floating Effects -->
+  <div class="floating-bg">
+    <div class="circle"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+  </div>
+
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <main class="glass" id="mainContent" style="display:none;">
+    <h1><i class="fas fa-gem"></i> SELKIE Influencer Program</h1>
+    <p>Join our premium fashion campaign. Fill the form, agree to our terms, choose 8 favorite items from our <a href="https://www.instagram.com/selkie/shop" target="_blank">Instagram Shop</a>, and we’ll send your exclusive package.</p>
+
+    <form id="collabForm">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="insta" placeholder="Instagram Handle" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <textarea name="address" placeholder="Full Delivery Address" required></textarea>
+      </div>
+
+  <h3>Select Your Collaboration Items</h3>
+    <p class="section-description">
+      Please take screenshots of <strong>8 items</strong> you love from our 
+      <a href="https://www.instagram.com/selkie/shop" target="_blank">Instagram Shop</a>. Upload them below:
+    </p>
+
+    <div class="form-group image-upload-grid" id="screenshots">
+      <input type="file" name="img1" accept="image/*" required />
+      <input type="file" name="img2" accept="image/*" required />
+      <input type="file" name="img3" accept="image/*" required />
+      <input type="file" name="img4" accept="image/*" required />
+      <input type="file" name="img5" accept="image/*" required />
+      <input type="file" name="img6" accept="image/*" required />
+      <input type="file" name="img7" accept="image/*" required />
+      <input type="file" name="img8" accept="image/*" required />
+    </div>
+
+      <label class="terms">
+        <input type="checkbox" id="agree" required>
+        I agree to the <a href="selkie.pdf" target="_blank">Collaboration Terms & Conditions</a>
+      </label>
+
+      <button type="submit" class="btn-glow">Submit & Generate PDF</button>
+    </form>
+
+    <div id="success" style="display:none;">
+      <h3>✅ You're In!</h3>
+      <p>Your collaboration PDF is ready. Please send it to us via:</p>
+      <div class="contact-icons">
+        <a href="#" id="whatsappLink" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#" id="emailLink"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </main>
+  <!-- Preview Modal -->
+<div id="previewModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h3>Preview Your Submission</h3>
+    <p><strong>Name:</strong> <span id="previewName"></span></p>
+    <p><strong>Instagram:</strong> <span id="previewInsta"></span></p>
+    <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+
+    <div class="preview-images" id="previewImages"></div>
+
+    <div class="modal-buttons">
+      <button id="confirmDownload" class="btn-glow">Confirm & Download PDF</button>
+      <button id="cancelPreview" class="btn-glow" style="background:#ccc; color:#333;">Edit Info</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
